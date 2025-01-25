@@ -1,0 +1,238 @@
+body{
+    margin: 0;
+}
+.container{
+    display: block;
+}
+.top{
+    background-image: url(https://huttolawncare.com/wp-content/uploads/2018/05/subtle-mountains.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    height: 750px;
+    width: 100%;
+}
+.name{
+    margin-left: 50px;
+    margin-right: 15%;
+    letter-spacing: 15px;
+    display: inline-block;
+    padding: 20px;
+    font-size: 45px;
+    font-family: "Lucida Console", Courier, monospace;
+}
+.navbar{
+    display: inline-flex;
+    gap: 30px;
+    justify-content: flex-end;
+
+}
+.navbar button{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 10px 10px 10px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #FAEBD7;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+.intro{
+    text-align: center;
+    position: relative;
+}
+h1{
+    color: #FAEBD7;
+    font-size: 7rem;
+    font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+    margin-bottom: 0;
+}
+.text h2{
+    color: #FAEBD7;
+    font-size: 2rem;
+    font-family: "Comic Sans MS", cursive;
+}
+
+.middle {
+    text-align: center;
+    background-color: #F0FFFF;
+    padding-bottom: 60px;
+}
+
+.profile{
+    text-align: center;
+}
+
+.profile img{
+    margin-top: 100px;
+    height: 300px;
+    border-radius: 50%;
+}
+.middle h2{
+    font-size: 3.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    color:#11cdd4;
+}
+.profile p{
+    font-size: 1.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 30%;
+    margin: auto;
+}
+.middle hr{
+    border: dotted 6px;
+    border-bottom: none;
+    width: 4%;
+    margin: 100px auto;
+    color: darkblue;
+}
+
+.grid{
+    display: flex;
+    justify-content: center;
+}
+.gridbox{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px;   
+}
+
+.textbox{
+    width: 60%;
+}
+.gridbox img{
+    height: 300px;
+    object-fit: cover;
+
+}
+.gridbox p{
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#title{
+    color: #11999e;
+    font-size: 25px;
+}
+
+.middle > p{
+    font-size: 1.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 50px;
+
+}
+
+.contact{
+    background: #11cdd4;
+    background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+    color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pressed{
+    box-shadow: 0 3px 4px 0 #DBEDF3;
+    opacity: 0.5;
+}
+.contact:hover {
+    background-color: #11cdd4;
+}
+
+.bottom{
+    text-align: center;
+    background-color: #11cdd4;
+    padding: 20px;
+}
+.footer{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+.footer *{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+.bottom p{
+    font-size: 15px;
+    margin-top: 30px;
+    color: white;
+}
+
+@media (min-width: 900px) and (max-width: 1300px){
+    .name{
+        text-align: center;
+        display: block;
+        margin: 0;
+        padding-top: 30px;
+        font-size: 3rem;
+    }
+    .navbar{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        height: auto;
+        margin-top: 50px;
+    }
+    h1{
+        font-size: 5rem;
+    }
+    .text h2{
+        font-size: 2.5rem;
+    }
+}
+
+
+@media (max-width: 900px){
+    .name{
+        text-align: center;
+        display: block;
+        margin: 0;
+        padding-top: 30px;
+        font-size: 2rem;
+    }
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        height: auto;
+        margin-top: 50px;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    .text h2{
+        font-size: 1.5rem;
+    }
+
+    .profile p{
+        width: 50%;
+    }
+    .gridbox{
+        gap: 20px;
+    }
+    #title{
+        font-size: 20px;
+    }
+    .gridbox img{
+        height: 150px;
+    }
+    .gridbox p{
+        font-size: 15px;
+        width: 80%;
+    }
+    .middle > p{
+        width: 50%;
+    }  
+}
