@@ -97,7 +97,7 @@ h1{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 30px;   
+    place-items: center;
 }
 
 .textbox{
@@ -106,7 +106,6 @@ h1{
 .gridbox img{
     height: 300px;
     object-fit: cover;
-
 }
 .gridbox p{
     font-size: 20px;
