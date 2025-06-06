@@ -73,34 +73,78 @@
 			});
 
 		}
+	
+	// —— Make each “spotlight” in #two clickable —— 
+		$('#two .spotlight').each(function() {
+			var $card = $(this),
+				href  = $card.data('href');      // read from data-href on the <section>
+			if (href) {
+				$card
+				.css('cursor','pointer')
+				.on('click', function() {
+					window.location.href = href;
+				});
+			}
+		});
 
+	// Banner
+		const typingElement = document.querySelector('.typing');
+		const texts = [
+			'Web Developer.',
+			'AI Explorer.',
+			'UI/UX Enthusiast.',
+			'Full Stack Innovator.'
+		];
+		let index = 0;
+		let charIndex = 0;
+		let isDeleting = false;
+
+		function type() {
+			const current = texts[index];
+			if (isDeleting) {
+			typingElement.textContent = current.substring(0, charIndex--);
+			if (charIndex < 0) {
+				isDeleting = false;
+				index = (index + 1) % texts.length;
+			}
+			} else {
+			typingElement.textContent = current.substring(0, charIndex++);
+			if (charIndex === current.length) {
+				isDeleting = true;
+				setTimeout(type, 1000);
+				return;
+			}
+			}
+			setTimeout(type, isDeleting ? 60 : 120);
+		}
+		document.addEventListener('DOMContentLoaded', type);
 
 	// —— seamless, continuous-scrolling for every .carousel —— 
-	$('.carousel').each(function() {
-		var $carousel = $(this),
-			$track    = $carousel.find('.carousel-track'),
-			$slides   = $track.children('img'),
-			count     = $slides.length,
-			// reverse if container has .reverse
-			speed     = $carousel.hasClass('reverse') ? -2 : 2,
-			xPos      = 0;
+		$('.carousel').each(function() {
+			var $carousel = $(this),
+				$track    = $carousel.find('.carousel-track'),
+				$slides   = $track.children('img'),
+				count     = $slides.length,
+				// reverse if container has .reverse
+				speed     = $carousel.hasClass('reverse') ? -2 : 2,
+				xPos      = 0;
 
-		// Clone originals for wrap
-		$track.append($slides.clone());
+			// Clone originals for wrap
+			$track.append($slides.clone());
 
-		// Measure width of one set
-		var slideW     = $slides.first().outerWidth(true),
-			totalWidth = slideW * count;
+			// Measure width of one set
+			var slideW     = $slides.first().outerWidth(true),
+				totalWidth = slideW * count;
 
-		// Drive it with RAF for zero-jump looping
-		(function loop() {
-		xPos -= speed;
-		if (xPos <= -totalWidth) xPos += totalWidth;
-		if (xPos >= 0)          xPos -= totalWidth;
-		$track.css('transform','translateX(' + xPos + 'px)');
-		requestAnimationFrame(loop);
-		})();
-	});
+			// Drive it with RAF for zero-jump looping
+			(function loop() {
+			xPos -= speed;
+			if (xPos <= -totalWidth) xPos += totalWidth;
+			if (xPos >= 0)          xPos -= totalWidth;
+			$track.css('transform','translateX(' + xPos + 'px)');
+			requestAnimationFrame(loop);
+			})();
+		});
 
 
 })(jQuery);
